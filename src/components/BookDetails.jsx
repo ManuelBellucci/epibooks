@@ -25,9 +25,9 @@ function BookDetails () {
       <div className='flex flex-col items-center gap-6 mx-auto my-6 bg-white border border-black rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-200'>
         <img className='object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-l-lg' src={bookDetails.img} alt={bookDetails.title} />
         <div className='flex flex-col gap-3 justify-between p-4 leading-normal'>
-          <h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>{bookDetails.title}</h5>
+          <h5 className='mb-2 text-2xl font-bold tracking-tight text-gray-900'>{bookDetails.title}</h5>
           <p className='text-[.75rem] mb-3'>ID: {bookDetails.asin} </p>
-          <p className='mb-3 font-normal text-gray-700 dark:text-gray-400'>Categoria: {bookDetails.category}</p>
+          <p className='mb-3 font-normal text-gray-700'>Categoria: {bookDetails.category}</p>
           <p>Prezzo: {bookDetails.price}€ </p>
         </div>
       </div>
