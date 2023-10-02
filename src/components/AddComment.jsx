@@ -39,7 +39,7 @@ const AddComment = React.memo(({ bookAsin, onAddComment }) => {
         </select>
       </div>
       <button className='relative group overflow-hidden bg-slate-400   p-2 mt-2 text-black' onClick={handleCommentSubmit}>
-        <div class='absolute inset-0 w-3 bg-slate-300 transition-all duration-[250ms] ease-out group-hover:w-full' />
+        <div className='absolute inset-0 w-3 bg-slate-300 transition-all duration-[250ms] ease-out group-hover:w-full' />
         <span className='relative group text-black'>Invia recensione</span>
       </button>
     </section>

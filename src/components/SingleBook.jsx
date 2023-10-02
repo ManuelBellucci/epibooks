@@ -49,7 +49,7 @@ const SingleBook = ({ book, selected, onBookSelect }) => {
       </figcaption>
 
       <Link className='relative group bg-slate-400 p-2 mt-3 w-full overflow-hidden' to={`/books/${book.asin}`}>
-        <div class='absolute inset-0 w-3 bg-slate-300 transition-all duration-[250ms] ease-out group-hover:w-full' />
+        <div className='absolute inset-0 w-3 bg-slate-300 transition-all duration-[250ms] ease-out group-hover:w-full' />
         <span className='relative text-black'>Vai ai dettagli</span>
       </Link>
     </figure>
