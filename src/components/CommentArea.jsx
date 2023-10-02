@@ -71,7 +71,7 @@ const CommentArea = ({ bookAsin }) => {
           </>
           )
         : (
-          <p>Non ci sono recensioni disponibili.</p>
+          <p className='text-center'>Non ci sono recensioni disponibili.</p>
           )}
 
       <AddComment bookAsin={bookAsin} onAddComment={handleAddComment} />

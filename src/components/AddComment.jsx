@@ -24,7 +24,7 @@ const AddComment = React.memo(({ bookAsin, onAddComment }) => {
         value={commentText}
         onChange={(e) => setCommentText(e.target.value)}
       />
-      <div className='m-auto p-3'>
+      <div className='m-auto p-3 text-center'>
         <label>Quanto ti è piaciuto questo libro?: </label>
         <select className='bg-black text-white w-full' value={rating} onChange={(e) => setRating(Number(e.target.value))}>
           {[1, 2, 3, 4, 5].map((value) => (
@@ -38,8 +38,9 @@ const AddComment = React.memo(({ bookAsin, onAddComment }) => {
           ))}
         </select>
       </div>
-      <button className='bg-slate-400 hover:bg-slate-300 p-2 mt-2 text-black' onClick={handleCommentSubmit}>
-        Invia recensione
+      <button className='relative group overflow-hidden bg-slate-400   p-2 mt-2 text-black' onClick={handleCommentSubmit}>
+        <div class='absolute inset-0 w-3 bg-slate-300 transition-all duration-[250ms] ease-out group-hover:w-full' />
+        <span className='relative group text-black'>Invia recensione</span>
       </button>
     </section>
   )

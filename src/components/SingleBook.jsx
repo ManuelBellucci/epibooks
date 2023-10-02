@@ -48,10 +48,9 @@ const SingleBook = ({ book, selected, onBookSelect }) => {
       >{truncatedTitle}
       </figcaption>
 
-      {/* Prezzo del libro */}
-      <p className='p-1 bg-slate-400 mt-3 mb-3'>{book.price}€</p>
-      <Link className='bg-slate-400 hover:bg-slate-300 p-2 mt-1 w-full' to={`/books/${book.asin}`}>
-        Vai ai dettagli
+      <Link className='relative group bg-slate-400 p-2 mt-3 w-full overflow-hidden' to={`/books/${book.asin}`}>
+        <div class='absolute inset-0 w-3 bg-slate-300 transition-all duration-[250ms] ease-out group-hover:w-full' />
+        <span className='relative text-black'>Vai ai dettagli</span>
       </Link>
     </figure>
   )
