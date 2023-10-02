@@ -1,11 +1,11 @@
 const Pagination = ({ currentPage, totalPages, onNextPage, onPrevPage }) => {
   return (
-    <div className='flex justify-center mt-4'>
+    <div className='flex justify-center mt-7'>
       {/* Previous button */}
       <button
         onClick={onPrevPage}
         disabled={currentPage === 1}
-        className='flex items-center justify-center px-6 py-6 h-8 mr-3 mb-6 text-xl font-medium text-dark-900 bg-white border border-black rounded-lg hover:bg-gray-100 hover:text-gray-700'
+        className='flex items-center justify-center px-3 py-5 h-8 mr-3 text-md font-medium text-black bg-white border border-black rounded-lg hover:bg-gray-100 hover:text-gray-700'
         aria-label='Previous'
       >
         <svg
@@ -30,7 +30,7 @@ const Pagination = ({ currentPage, totalPages, onNextPage, onPrevPage }) => {
       <button
         onClick={onNextPage}
         disabled={currentPage === totalPages}
-        className='flex items-center justify-center px-6 py-6 h-8 mr-3 mb-3 text-xl font-medium text-dark-900 bg-white border border-black rounded-lg hover:bg-gray-100 hover:text-gray-700'
+        className='flex items-center justify-center px-3 py-5 h-8 mr-3 mb-3 text-md font-medium text-black bg-white border border-black rounded-lg hover:bg-gray-100 hover:text-gray-700'
         aria-label='Next'
       >
         Next

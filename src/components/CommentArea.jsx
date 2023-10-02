@@ -4,11 +4,14 @@ import AddComment from './AddComment'
 import { GRADIENT_CLASSNAME } from '../constants/GRADIENT_CLASSNAME'
 import { useTheme } from '../contexts/ThemeContext'
 import { fetchComments, onDeleteComment } from '../functions/reviewFunctions'
+import Pagination from './Pagination'
 
 const CommentArea = ({ bookAsin }) => {
   // Stati per gestire i dati dei commenti e gli errori
   const [commentData, setCommentData] = useState([])
   const [error, setError] = useState(null)
+  const [currentPage, setCurrentPage] = useState(1)
+  const itemsPerPage = 3
   // Ottenere il tema dal contesto
   const { theme } = useTheme()
 
@@ -27,10 +30,27 @@ const CommentArea = ({ bookAsin }) => {
     }
   }, [bookAsin])
 
+  const calculateCurrentComments = () => {
+    const indexOfLastItem = currentPage * itemsPerPage
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage
+    return commentData.slice(indexOfFirstItem, indexOfLastItem)
+  }
+
+  const currentComments = calculateCurrentComments()
+
   // Gestisce l'aggiunta di un nuovo commento alla lista esistente
   const handleAddComment = (newComment) => {
     if (newComment !== '') {
       setCommentData((prevComments) => [...prevComments, newComment])
+      setCurrentPage(1)
+    }
+  }
+
+  const handlePagination = (action) => {
+    if (action === 'next' && currentPage < Math.ceil(commentData.length / itemsPerPage)) {
+      setCurrentPage(currentPage + 1)
+    } else if (action === 'prev' && currentPage > 1) {
+      setCurrentPage(currentPage - 1)
     }
   }
 
@@ -40,11 +60,20 @@ const CommentArea = ({ bookAsin }) => {
       {error && <p className='text-red-500'>{error}</p>}
       {commentData.length > 0
         ? (
-          <CommentList comments={commentData} onDeleteComment={onDeleteComment} />
+          <>
+            <CommentList comments={currentComments} onDeleteComment={onDeleteComment} />
+            <Pagination
+              currentPage={currentPage}
+              totalPages={Math.ceil(commentData.length / itemsPerPage)}
+              onNextPage={() => handlePagination('next')}
+              onPrevPage={() => handlePagination('prev')}
+            />
+          </>
           )
         : (
           <p>Non ci sono recensioni disponibili.</p>
           )}
+
       <AddComment bookAsin={bookAsin} onAddComment={handleAddComment} />
     </aside>
   )
