@@ -11,14 +11,13 @@ const LatestRelease = ({ query }) => {
   const { currentBooks, paginationOptions, handleBookSelect, selectedBook } = useBookData(query)
   const { theme } = useTheme()
 
-  // State to manage loading state
+  // Stato per gestire il loading
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Assuming useBookData fetches data asynchronously
-    // Set loading to false once data is fetched
+    // Set loading in falso dopo il fetch
     setLoading(false)
-  }, [currentBooks]) // You might need to adjust the dependency array based on your useBookData implementation
+  }, [currentBooks])
 
   return (
     <section className={`${theme === 'dark' ? 'bg-slate-800' : ''} flex flex-row`}>

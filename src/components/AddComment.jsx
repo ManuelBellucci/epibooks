@@ -9,8 +9,6 @@ const AddComment = React.memo(({ bookAsin, onAddComment }) => {
 
   // Gestisce l'invio del commento
   const handleCommentSubmit = () => {
-    // Registra i dettagi del commento in console
-    console.log('Submitting comment asin:', bookAsin, 'Submitting commentText:', commentText, 'Submitting rating:', rating)
     // Chiama la funzione di invio
     handleSubmit(bookAsin, commentText, rating, onAddComment, AUTH_TOKEN)
     // Resetta lo stato del testo del commento e della valutazione dopo l'invio
