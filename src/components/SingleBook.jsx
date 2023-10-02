@@ -37,7 +37,7 @@ const SingleBook = ({ book, selected, onBookSelect }) => {
         alt={book.title}
         className={`${coverClassName}`}
         onClick={handleClick}
-        loading='eager'
+        loading='lazy'
       />
 
       {/* Titolo del libro troncato */}
