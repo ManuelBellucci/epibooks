@@ -41,7 +41,7 @@ const AddComment = React.memo(({ bookAsin, onAddComment }) => {
           ))}
         </select>
       </div>
-      <button className='relative group overflow-hidden bg-slate-400   p-2 mt-2 text-black' onClick={handleCommentSubmit}>
+      <button className='relative group overflow-hidden bg-slate-400 p-2 mt-2 text-black' onClick={handleCommentSubmit}>
         <div className={`${
           theme === 'dark' ? 'bg-slate-300' : 'bg-slate-500'
         } absolute inset-0 w-3 transition-all duration-[250ms] ease-out group-hover:w-full`}
