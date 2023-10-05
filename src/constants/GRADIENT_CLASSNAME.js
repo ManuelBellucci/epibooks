@@ -1,1 +1,1 @@
-export const GRADIENT_CLASSNAME = 'text-center mb-4 font-extrabold xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400 uppercase mt-7 mb-9'
+export const GRADIENT_CLASSNAME = 'text-center mb-4 font-extrabold xl:text-4xl lg:text-3xl md:text-2xl sm:text-xl text-transparent bg-clip-text bg-gradient-to-b to-slate-500 from-slate-400 uppercase mt-7 mb-9'
