@@ -9,7 +9,9 @@ function ThemeToggle () {
   return (
     <button
       onClick={toggleTheme}
-      className='w-10 h-10 p-2 bg-slate-400 rounded-full focus:outline-none hover:bg-slate-300 border border-black'
+      className={`${
+        theme === 'dark' ? 'hover:bg-slate-300' : 'hover:bg-slate-500'
+      } w-10 h-10 p-2 bg-slate-400 rounded-full focus:outline-none border border-black`}
     >
       {/* Icone differenti in base al tema corrente */}
       {theme === 'dark'

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { AUTH_TOKEN } from '../constants/AUTH_TOKEN'
 import { handleSubmit } from '../functions/reviewFunctions'
+import { useTheme } from '../contexts/ThemeContext'
 
 const AddComment = React.memo(({ bookAsin, onAddComment }) => {
   // Stati per gestire il testo del commento e la valutazione
@@ -15,6 +16,8 @@ const AddComment = React.memo(({ bookAsin, onAddComment }) => {
     setCommentText('')
     setRating(1)
   }
+
+  const { theme } = useTheme()
 
   return (
     <section className='mt-3 border-black flex flex-col content-center'>
@@ -39,7 +42,10 @@ const AddComment = React.memo(({ bookAsin, onAddComment }) => {
         </select>
       </div>
       <button className='relative group overflow-hidden bg-slate-400   p-2 mt-2 text-black' onClick={handleCommentSubmit}>
-        <div className='absolute inset-0 w-3 bg-slate-300 transition-all duration-[250ms] ease-out group-hover:w-full' />
+        <div className={`${
+          theme === 'dark' ? 'bg-slate-300' : 'bg-slate-500'
+        } absolute inset-0 w-3 transition-all duration-[250ms] ease-out group-hover:w-full`}
+        />
         <span className='relative group text-black'>Invia recensione</span>
       </button>
     </section>
